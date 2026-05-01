@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 15, 23, 42;
+  /* slate-900 */
+  --background-start-rgb: 248, 250, 252;
+  /* slate-50 */
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+/* 3D Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-500 {
+  perspective: 500px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.hover\:rotate-y-2:hover {
+  transform: rotateY(2deg);
+}
+
+.hover\:rotate-y-6:hover {
+  transform: rotateY(10deg);
+}
+
+.hover\:rotate-y-minus-6:hover {
+  transform: rotateY(-10deg);
+}
+
+.hover\:rotate-x-2:hover {
+  transform: rotateX(5deg);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
